@@ -37,14 +37,6 @@
             'active' => request()->routeIs('admin.doctors.*'),
         ],
 
-        // Soporte
-        [
-            'name' => 'Soporte',
-            'icon' => 'fa-solid fa-headset',
-            'href' => route('admin.tickets.index'),
-            'active' => request()->routeIs('admin.tickets.*'),
-        ],
-
     ];
 @endphp
 

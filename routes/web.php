@@ -12,19 +12,16 @@ Route::middleware([
     'verified',
 ])->group(function () {
     // Ruta del perfil
-    Route::get('/user/profile', [\Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController::class , 'show'])
+    Route::get('/user/profile', [\Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController::class, 'show'])
         ->name('profile.show');
     // Rutas de administración
     Route::prefix('admin')->name('admin.')->group(function () {
-            // Cambia esta línea para usar Livewire en lugar del controlador
-    
-            Route::get('/roles', [RoleController::class , 'index'])->name('roles.index');
+        // Cambia esta línea para usar Livewire en lugar del controlador
 
-            //RUTA PARA DOCTORES
-            Route::resource('doctors', App\Http\Controllers\Admin\DoctorController::class);
+        Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
 
-            // Rutas para soporte técnico (Tickets)
-            Route::resource('tickets', App\Http\Controllers\TicketController::class);
+        //RUTA PARA DOCTORES
+        Route::resource('doctors', App\Http\Controllers\Admin\DoctorController::class);
 
-        }
-        );    });
+    });
+});
